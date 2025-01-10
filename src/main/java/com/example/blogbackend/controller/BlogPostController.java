@@ -16,6 +16,7 @@ public class BlogPostController {
     SearchRepo searchRepo;
 
     @GetMapping("/posts")
+    @CrossOrigin
     public List<BlogPost> getAll(){
         return repo.findAll();
     }
