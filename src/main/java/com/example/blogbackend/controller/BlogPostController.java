@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+//@CrossOrigin(origins = "*", allowCredentials = "true", allowedHeaders = "*")
 @RestController
 public class BlogPostController {
     @Autowired
@@ -16,7 +17,6 @@ public class BlogPostController {
     SearchRepo searchRepo;
 
     @GetMapping("/posts")
-    @CrossOrigin
     public List<BlogPost> getAll(){
         return repo.findAll();
     }
