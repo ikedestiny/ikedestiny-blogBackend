@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 //@CrossOrigin(origins = "*", allowCredentials = "true", allowedHeaders = "*")
 @RestController
@@ -21,10 +22,17 @@ public class BlogPostController {
         return repo.findAll();
     }
 
+    @GetMapping("posts/{id}")
+    public Optional<BlogPost> findById(@PathVariable String id){
+        return repo.findById(id);
+    }
+
     @PostMapping("/create-new-blog")
     public BlogPost createNewBlog(@RequestBody BlogPost blogPost){
         return repo.save(blogPost);
     }
+
+
 
     @DeleteMapping("/delete/{id}")
     public String deleteById(@PathVariable String id){
