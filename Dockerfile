@@ -8,7 +8,7 @@ WORKDIR /app
 COPY target/BlogBackend-0.0.1-SNAPSHOT.jar app.jar
 
 # Expose the application port (default is 8080 for Spring Boot)
-EXPOSE 8080
+EXPOSE 8081
 
 # Run the application
 ENTRYPOINT ["java", "-jar", "app.jar"]
